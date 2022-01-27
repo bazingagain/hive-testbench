@@ -49,6 +49,8 @@ All of these steps should be carried out on your Hadoop cluster.
 
   Build 1 TB of TPC-DS data: ```./tpcds-setup.sh 1000```
 
+  Build 1 TB of TPC-DS data, data store at bos: ```./tpcds-setup.sh 1000 bos://mybucket/hive-tpcds```
+
   Build 1 TB of TPC-H data: ```./tpch-setup.sh 1000```
 
   Build 100 TB of TPC-DS data: ```./tpcds-setup.sh 100000```

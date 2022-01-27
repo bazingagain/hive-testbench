@@ -5,4 +5,5 @@ drop table if exists warehouse;
 
 create table warehouse
 stored as ${FILE}
+location '${LOCATION}/warehouse'
 as select * from ${SOURCE}.warehouse;

@@ -30,7 +30,9 @@ create table web_returns
 ,     wr_net_loss decimal(7,2)
 )
 partitioned by (wr_returned_date_sk       bigint)
-stored as ${FILE};
+stored as ${FILE}
+location '${LOCATION}/web_returns'
+;
 
 from ${SOURCE}.web_returns wr
 insert overwrite table web_returns partition (wr_returned_date_sk)

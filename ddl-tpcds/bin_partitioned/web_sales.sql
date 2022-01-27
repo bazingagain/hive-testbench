@@ -40,7 +40,9 @@ create table web_sales
     ws_net_profit             decimal(7,2)
 )
 partitioned by (ws_sold_date_sk           bigint)
-stored as ${FILE};
+stored as ${FILE}
+location '${LOCATION}/web_sales'
+;
 
 from ${SOURCE}.web_sales ws
 insert overwrite table web_sales partition (ws_sold_date_sk) 
